@@ -1,0 +1,25 @@
+th:nth-child(1) {
+    color: brown;
+}
+th:nth-child(7) {
+    color: blue;
+}
+tr:nth-child(1) {
+    background:  yellow;
+    color: white;
+}
+th sub:nth-child(1) {
+    color: black;
+}
+#CN{
+    background: brown;
+    color: white;
+}
+#TB{
+    background: blue;
+    color: white;
+}
+tr th:nth-child(3) {
+    border: 1px solid black;
+}
+
