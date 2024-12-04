@@ -19,7 +19,26 @@ th sub:nth-child(1) {
     background: blue;
     color: white;
 }
-tr th:nth-child(3) {
+tr:nth-child(3) th {
     border: 1px solid black;
+}
+tr:nth-child(4) th {
+    border: 1px solid black;
+}tr:nth-child(5) th {
+     border: 1px solid black;
+ }tr:nth-child(6) th {
+      border: 1px solid black;
+  }
+tr:nth-child(7) th {
+    border: 1px solid black;
+}
+h1{
+    text-align: center;
+    color: blue;
+}
+table{
+    text-align: center;
+    margin-left: 510px;
+    border-collapse: collapse;
 }
 

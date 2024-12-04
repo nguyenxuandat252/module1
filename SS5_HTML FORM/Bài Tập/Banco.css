@@ -22,6 +22,9 @@ table{
     border: 0.5px solid #000000;
     border-collapse: collapse;
 }
-.v{
-    background-color: #875576;
+tr:nth-child(1) th{
+    background-color: yellow;
+}
+th:nth-child(1) {
+    background-color: yellow;
 }
