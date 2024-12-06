@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <button type="button" id="sum" onclick="calculate('+')">+</button>
+        <button type="button" id="subtraction" onclick="calculate('-')">-</button>
+        <button type="button" id="multiplication" onclick="calculate('x')">x</button>
+        <button type="button" id="division" onclick="calculate('/')">/</button>
+    </form>
+    <p id="result"></p>
+<script>
+    function calculate(phepTinh)
+    {
+        let num1 = +document.getElementById("num1").value;
+        let num2 = +document.getElementById("num2").value;
+        let result;
+        if(phepTinh === "+"){
+            result=num1+num2;
+        }else if (phepTinh === "-"){
+            result=num1-num2;
+        }else if (phepTinh === "x") {
+            result = num2 * num2;
+        }else{
+            if(num2===0){
+                result= "mẫu bằng 0 không chia được";
+            } else {
+                result = num1 / num2;
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>

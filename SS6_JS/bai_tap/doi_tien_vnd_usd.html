@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function myFunction() {
+        let monney = document.getElementById("monney1").value;
+        let tt = document.getElementById("vu").value;
+        let tt1 = document.getElementById("vu1").value;
+        if (monney <= 0 || isNaN(monney) || (tt1 == "VND" && tt == "VND") || tt1 == "USD" && tt == "USD") {
+            document.write("Kiểm tra lại cú pháp, tiền tệ !");
+        }
+    }
+    function myFunction1() {
+        let monney = parseFloat(document.getElementById("monney1").value);
+        let tt = document.getElementById("vu").value;
+        let tt1 = document.getElementById("vu1").value;
+        if (tt1 == "VND" && tt == "VND" || tt1 == "USD" && tt == "USD"){
+            document.write("Kiểm tra lại cú pháp, tiền tệ !");
+        }
+        if (tt == "VND" && tt1 == "USD") {
+            let di = monney * 0.000039;
+            document.write("Số tiền bạn nhập sẽ quy đổi thành:" + di + " USD");
+        }
+        if (tt1 == "VND" && tt == "USD") {
+            let di = monney * 25380;
+            document.write("Số tiền bạn nhập sẽ quy đổi thành:" + di.toLocaleString('de-DE') + " VND");
+        }
+    }
+    document.getElementById("myForm").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("myForm").submit();
+        }
+    });
+</script>
+<form id="myForm">
+    <input type="text" id="monney1" name="monney" oninput="myFunction()">
+    <select id="vu" name="vu">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <select id="vu1" name="vu">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+    </select>
+    <button type="submit" id="submitBtn" onclick="myFunction1()">Gửi</button>
+</form>
+</body>
+</html>
