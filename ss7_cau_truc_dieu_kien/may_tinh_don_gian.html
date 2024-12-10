@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="display"><br>
+    <input type="button" value="1" onclick="click1('1')">
+    <input type="button" value="2" onclick="click1('2')">
+    <input type="button" value="3" onclick="click1('3')">
+    <input type="button" value="+" onclick="click1('+')"><br>
+    <input type="button" value="4" onclick="click1('4')">
+    <input type="button" value="5" onclick="click1('5')">
+    <input type="button" value="6" onclick="click1('6')">
+    <input type="button" value="-" onclick="click1('-')"><br>
+    <input type="button" value="7" onclick="click1('7')">
+    <input type="button" value="8" onclick="click1('8')">
+    <input type="button" value="9" onclick="click1('9')">
+    <input type="button" value="*" onclick="click1('*')"><br>
+    <input type="button" value="C" onclick="deleteNunber()">
+    <input type="button" value="0" onclick="click1('0')">
+    <input type="button" value="=" onclick="click2('=')">
+    <input type="button" value="/" onclick="click1('/')"><br>
+<script>
+    function click1(value) {
+        const display = document.getElementById('display');
+        display.value += value;
+    }
+    function click2() {
+        let result = eval (display.value);
+        display.value='';
+        display.value = result;
+    }
+    function deleteNunber(){
+        document.getElementById("display").value= "";
+    }
+</script>
+</body>
+</html>

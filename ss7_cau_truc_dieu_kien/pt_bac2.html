@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    let num1=prompt("Nhập a: ");
+    let num2=prompt("Nhập b: ");
+    let num3=prompt("Nhập c: ");
+    if(isNaN(num1)||isNaN(num2)||isNaN(num3)) {
+      alert("Nhập lại 3 số");
+    }else if(num1 ===0){
+      document.write("Phương trinh có nghiệm duy nhất là: "+ ((-num3)/num2));
+    }else{
+      let detal= (num2*num2) - (4*num1*num3);
+      console.log(detal);
+      if(detal < 0){
+        document.write("Phương trình vô nghiệm");
+      }else if(detal = 0 ){
+        document.write("Phương trình có nghiệm kép là : x=" + (-num2/(2*num1)));
+      }else {
+        document.write("Phương trình có nghiệm x1= "+ (-num2+(Math.sqrt(detal)))/(2*num1));
+        document.write("<br>");
+        document.write("Phương trình có nghiệm x2= "+ (-num2-(Math.sqrt(detal)))/(2*num1));
+      }
+    }
+  </script>
+</body>
+</html>

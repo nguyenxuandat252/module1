@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!
+    Phí thuê bao bắt buộc là 25 nghìn.
+
+    600 đồng cho mỗi gọi của 50 phút đầu tiên.
+
+    400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+
+    200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+    >
+    <script>
+        function calculate(){
+            let minute = parseInt(prompt("Nhập vào số phút tính cước : "));
+            let price = 0;
+            if(minute <=50){
+                price = 25000 + minute*600;
+            }else if(minute > 50 && minute <= 200){
+                price = 25000 + (50 * 600) + (minute - 50)*400 ;
+            }else{
+                price = 25000 + (50 * 600) + (minute - 50)*400 + (minute - 200)*200;
+            }
+            document.write("Tổng số phút : " +minute+ " Số tiền phải trả: "+price);
+        }
+        calculate();
+    </script>
+</body>
+</html>

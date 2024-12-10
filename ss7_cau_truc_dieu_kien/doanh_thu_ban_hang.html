@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    NHap so luong: <input type="text" id="Quantity" oninput="myFunction()">
+    Nhap gia: <input type="text" id="Price" oninput="myFunction()">
+    <p id="in"></p>
+</form>
+<script>
+    function myFunction() {
+        let quantity = document.getElementById('Quantity').value;
+        let price = document.getElementById('Price').value;
+        let tong = quantity * price;
+        let profit = tong * 0.05;
+        document.getElementById('in').innerHTML = "Tổng doanh thu : " + tong  +" Lợi nhuận: " + profit;
+    }
+</script>
+</body>
+</html>

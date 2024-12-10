@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let width = parseFloat(prompt("Nhập chiều rộng hcn: "));
+    let height = parseFloat(prompt("Nhập chiều dài hcn: "));
+    let acreage = 0;
+    if (width <= 0 || height <=0) {
+        document.write("Sai kích thước");
+    } else if (isNaN(width) || isNaN(height)) {
+        alert("Nhập số!");
+    } else {
+        acreage = width * height;
+        document.write("Hình chũ nhật có diện tích là: " + acreage);
+    }
+</script>
+</body>
+</html>

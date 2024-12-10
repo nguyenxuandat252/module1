@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Máy Tính Cơ Bản</title>
+</head>
+<body>
+<!-- Ô hiển thị -->
+<input type="text" id="display" disabled><br>
+
+<!-- Bàn phím -->
+<input type="button" value="1" onclick="clickButton('1')">
+<input type="button" value="2" onclick="clickButton('2')">
+<input type="button" value="3" onclick="clickButton('3')">
+<input type="button" value="+" onclick="clickButton('+')"><br>
+
+<input type="button" value="4" onclick="clickButton('4')">
+<input type="button" value="5" onclick="clickButton('5')">
+<input type="button" value="6" onclick="clickButton('6')">
+<input type="button" value="-" onclick="clickButton('-')"><br>
+
+<input type="button" value="7" onclick="clickButton('7')">
+<input type="button" value="8" onclick="clickButton('8')">
+<input type="button" value="9" onclick="clickButton('9')">
+<input type="button" value="*" onclick="clickButton('*')"><br>
+
+<input type="button" value="C" onclick="clearDisplay()">
+<input type="button" value="0" onclick="clickButton('0')">
+<input type="button" value="=" onclick="calculate()">
+<input type="button" value="/" onclick="clickButton('/')"><br>
+
+<script>
+    // Thêm nút bấm vào ô hiển thị
+    function clickButton(value) {
+        const display = document.getElementById('display');
+        display.value += value;
+    }
+
+</script>
+</body>
+</html>

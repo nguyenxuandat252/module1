@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = parseFloat(prompt("Nhập vào số điện"));
+    let monney = 0;
+    let cay = 0;
+    if (num1 <= 50) {
+        cay = 1;
+    } else if (100 >= num1 > 50) {
+        cay = 2;
+    } else if (200 >= num1 > 100) {
+        cay = 2;
+    } else if (300 >= num1 > 200) {
+        cay = 2;
+    } else if (400 >= num1 > 300) {
+        cay = 2;
+    } else if (num1 > 400) {
+        cay = 2;
+    }
+    switch (cay) {
+        case 1:
+            monney = num1 * 1.678;
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+        case 2:
+            monney = (50 * 1.678) + ((num1 - 50) * 1.734);
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+        case 3:
+            monney = (50 * 1.678) + (50 * 1.734) + ((num1 - 100) * 2.014);
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+        case 4:
+            monney = (50 * 1.678) + (50 * 1.734)+(100 * 2.014) + ((num1 - 200) * 2.536);
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+        case 5:
+            monney = (50 * 1.678) + (50 * 1.734)+(100 * 2.014) + (100 * 2.536) + ((num1 - 300) * 2.834);
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+        case 6:
+            monney = (50 * 1.678) + (50 * 1.734)+(100 * 2.014) + (100 * 2.536) + (100 * 2.834) + ((num1 - 400) * 2.927);
+            document.write("Tiền điện tháng này "+ monney);
+            break;
+    }
+</script>
+</body>
+</html>

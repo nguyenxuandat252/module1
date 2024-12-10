@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        let meter = parseFloat(prompt("Nhập mét: "));
+        let ft = 0;
+        if(isNaN(meter)){
+            document.write("mét phải là số !");
+        }else {
+            ft= meter * 3.2808;
+            document.getElementById("result").innerText= `${meter} + "tuong đương" + ${ft.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
