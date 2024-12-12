@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let number = 2;
+        let soLuongSNTCanIn = +prompt("nhập số lượng snt cần in")
+        let soLuongSNTTimDuoc = 0;
+        let ketQua = "";
+        while (soLuongSNTTimDuoc < soLuongSNTCanIn) {
+            let count = 0;
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    count++;
+                }
+            }
+            if (count === 0) {
+                soLuongSNTTimDuoc++;
+                if (soLuongSNTCanIn==soLuongSNTTimDuoc){
+                    ketQua += number;
+                }else {
+                    ketQua += number + ",";
+                }
+            }
+            number++;
+        }
+        document.write(ketQua);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--  Tính tổng của 20 số đầu tiên trong dãy fibonacci-->
+</head>
+<body>
+<script>
+    function sumfibonaci(n) {
+        let num1 = 0;
+        let num2 = 1;
+        let sum = num1 + num2;
+        let count = 2;
+        while (count < n) {
+            let num3 = num1 + num2;
+            sum += num3;
+            num1 = num2;
+            num2 = num3;
+            count++;
+        }
+        return sum;
+    }
+
+    let result = sumfibonaci(20);
+    document.write("kết quả là " + result);
+</script>
+</body>
+</html>

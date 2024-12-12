@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="play" onclick="playGame()" value="Chơi">
+<script>
+    function playGame() {
+        let num1 = parseInt(prompt("Nhập vào số nhỏ nhất : "));
+        let num2 = parseInt(prompt("Nhập vào số lớn nhất : "));
+        while (num2 <= num1) {
+            num2 = parseInt(prompt("Nhập lại số lớn nhất : "));
+        }
+        let random = Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+        console.log(random);
+        for (let i = 0; i <= 2; i++) {
+            let guess = parseInt(prompt("Nhập vào số bạn cho là đúng"));
+            if (guess < random) {
+                alert("Số bạn nhập bé hơn !");
+            } else if (guess > random) {
+                alert("Số bạn nhập lơn hơn !");
+            } else {
+                alert("ok");
+            }
+        }
+        document.write("Hết lượt chơi số đúng là: "+ random);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      let n=20;
+      let num1=0;
+      let num2=1;
+      //document.write(num1+","+num2+",");
+      for(let i=2;i<n;i++){
+        let num3=num2+num1;
+        if(num3%5==0){
+          document.write("số đầu tiên chia het cho 5 là: "+num3);
+          break;
+        }
+        // document.write(num3);
+        // if (i<19){
+        //   document.write(",");
+        // }
+        num1=num2;
+        num2=num3;
+      }
+
+    </script>
+</body>
+</html>
