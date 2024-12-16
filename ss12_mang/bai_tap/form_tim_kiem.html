@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="input">
+    <input type="button" id="search" value="Search" onclick="tim_kiem()">
+    <p id="display"></p>
+</form>
+<script>
+    function tim_kiem() {
+        let array1 = ["apple", "banana"];
+        let array2 = ["quatao", "quachuoi"];
+        let value = document.getElementById("input").value;
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] === value) {
+                document.getElementById(display).value = document.write(array1[i] + " la " + array2[i]);
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let dem = 0;
+    let ketQua = [];
+    for (let i = 0; i <= 10; i++) {
+        let value1 = +prompt("Nhap vao:");
+        if (isNaN(value1)) {
+            alert("so vua nhap khong hop le");
+            value1 = +prompt("Nhap vao:");
+        } else {
+            array.push(value1);
+        }
+    }
+    document.write("array = [" + array + "]");
+    for (let j = 0; j < array.length; j++) {
+        if (parseInt(array[j]) === array[j] && array[j] >= 10) {
+            dem++;
+            ketQua.push(array[j]);
+        }
+    }
+    document.write(" có " + dem + "số nguyen lớn hơn hoặc bằng 10 lần lượt là: " + ketQua);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1;
+    do{
+        num1= (prompt("Nhap vao 1 so: "));
+    } while (isNaN(num1) || num1.trim() === "");
+    let chuoi=num1.toString();
+    let result = chuoi[0];
+    for (let i=1;i<chuoi.length;i++){
+        let sosau=chuoi[i];
+        let sotruoc=chuoi[i-1];
+        if(sosau%2===0&&sotruoc%2===0){
+            result+="-";
+        }
+        result+=sosau;
+    }
+    console.log(result);
+</script>
+</body>
+</html>

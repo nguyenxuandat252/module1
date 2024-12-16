@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 1; i <= 10; i++) {
+        do {
+            value1 = prompt(`Nhập số thứ ${i}:`);
+            value1 = parseInt(value1);
+            if (isNaN(value1) || array.indexOf(value1) !== -1) {
+                alert("Số vừa nhập không hợp lệ hoặc đã tồn tại trong mảng!");
+            }
+        } while (isNaN(value1) || array.indexOf(value1) !== -1);
+        array.push(value1);
+    }
+    document.write(array);
+    array.sort((a,b)=>b-a);
+    console.log(array);
+</script>
+</body>
+</html>

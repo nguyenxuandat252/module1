@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập chỗi ký tự:");
+    let result = "";
+    let mang1 = input.split(" ");
+
+    function abc(input) {
+        for (let i = 0; i < mang1.length; i++) {
+            let firstChars = mang1.map(item => item.trim()[0]);
+            if (firstChars >= 'a' && firstChars <= 'z') {
+                result += firstChars.toUpperCase();
+            }
+            if (firstChars >= 'A' && firstChars <= 'Z') {
+                result += firstChars.toLowerCase();
+            } else {
+                result += char;
+            }
+        }
+        document.write(result);
+    }
+    console.log(abc());
+
+</script>
+</body>
+</html>

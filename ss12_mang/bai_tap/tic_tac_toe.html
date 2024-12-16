@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p id="banco"></p>
+    <input type="button" value="danhdau" onclick="danh()">
+</form>
+<script>
+
+    let game = [
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"],
+        ["(.)", "(.)", "(.)", "(.)", "(.)"]
+    ];
+
+    function renderTable(b) {
+        let tableHTML = "<table>";
+        for (let r of b) {
+            tableHTML += "<tr>";
+            for (let c of r) {
+                tableHTML += `<td>${c}</td>`;
+            }
+            tableHTML += "</tr>";
+        }
+        tableHTML += "</table>";
+        return tableHTML;
+    }
+
+    document.getElementById("banco").innerHTML = renderTable(game);
+
+    function danh() {
+        let x = prompt("Nhap toa do x:");
+        let y = prompt("Nhap toa do y:");
+        game[x].splice(parseInt(y), 1, '0');
+        document.getElementById("banco").innerHTML = renderTable(game);
+    }
+</script>
+</body>
+</html>

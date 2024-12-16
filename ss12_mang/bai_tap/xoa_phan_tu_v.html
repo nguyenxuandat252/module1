@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 1; i <= 10; i++) {
+        do {
+            value1 = +prompt(`Nhập số thứ ${i}:`);
+            if (isNaN(value1)) {
+                alert("Số vừa nhập không hợp lệ !");
+            }
+        } while (isNaN(value1));
+        array.push(value1);
+    }
+    document.write(array + "<br>");
+    let num1 = +prompt("nhập số nguyen V: ");
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === num1) {
+            for (let j = i; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+            array[array.length - 1] = 0;
+        }
+    }
+    document.write(array + "<br>");
+</script>
+</body>
+</html>
