@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<button id="timkiem" onclick="timkiem()" >tìm kiếm</button>
+<script>
+  function timkiem(){
+    let array=["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let array1=["Ursa", "Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
+    let search=document.getElementById("input").value;
+    let result=false;
+    for (let i=0;i<array.length;i++){
+      if(array[i]===search){
+        alert("Ngôi sao "+ array[i]+ " thuộc chòm sao "+ array1[i]);
+        result=true;
+        break;
+      }
+    }
+    if(result==false){
+      alert("chòm sao bạn nhập không có trong danh sách");
+    }
+  }
+</script>
+</body>
+</html>

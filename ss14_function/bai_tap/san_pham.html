@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<button onclick="them()">Thêm</button>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    function them() {
+        let input = document.getElementById('input').value;
+        if (input.trim() === '') {
+            alert("không được để rỗng");
+            return;
+        }
+        let dem = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == input) {
+                alert("sản phẩm đã tồn tại");
+                document.getElementById('input').value = '';
+                dem++;
+                break;
+            }
+        }
+        if (dem === 0) {
+            arr.push(input);
+        }
+        return arr;
+    }
+    console.log(arr);
+    
+</script>
+</body>
+</html>

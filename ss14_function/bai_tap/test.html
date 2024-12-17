@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý danh sách</title>
+</head>
+<body>
+<h2>Thêm sản phẩm vào danh sách</h2>
+<input type="text" id="input" placeholder="Nhập sản phẩm">
+<button onclick="them()">Thêm</button>
+
+<h3>Danh sách sản phẩm:</h3>
+<p id="output"></p>
+
+<script>
+  // Mảng chứa danh sách sản phẩm
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  // Hàm hiển thị danh sách sản phẩm
+  function hienThi() {
+    document.getElementById("output").innerText = arr.join(", ");
+  }
+
+  // Hàm thêm sản phẩm vào mảng
+  function them() {
+    let input = document.getElementById('input').value; // Lấy giá trị từ ô input
+    if (input.trim() === "") {
+      alert("Vui lòng nhập sản phẩm!");
+      return;
+    }
+
+    let dem = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == input) { // So sánh không chặt chẽ để tránh lỗi kiểu dữ liệu
+        alert("Sản phẩm đã tồn tại!");
+        dem++;
+        break;
+      }
+    }
+
+    if (dem === 0) {
+      arr.push(input); // Thêm vào mảng
+      alert("Sản phẩm đã được thêm thành công!");
+    }
+
+    hienThi(); // Cập nhật lại danh sách
+    document.getElementById('input').value = ""; // Xóa ô nhập
+  }
+
+  // Hiển thị danh sách ban đầu
+  hienThi();
+</script>
+</body>
+</html>
