@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str) {
+            str = str.replace(/\s+/g, "").toLowerCase();
+            if (str.length <= 1) {
+                return true;
+            }
+            if (str[0] !== str[str.length - 1]) {
+                return false;
+            }
+            return isPalindrome(str.slice(1, str.length - 1));
+        }
+        console.log(isPalindrome("rotor"));   // true
+        console.log(isPalindrome("redder"));  // true
+        console.log(isPalindrome("motor"));   // false
+        console.log(isPalindrome("A man a plan a canal Panama")); // true
+
+    </script>
+
+</body>
+</html>

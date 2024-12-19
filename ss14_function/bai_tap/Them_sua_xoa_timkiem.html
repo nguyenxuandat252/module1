@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="name" placeholder="nhập vào" id="name">
+<button id="add" onclick="add(product)">Thêm</button>
+<button id="edit" onclick="editItem1()">Sửa</button>
+<button id="search" onclick="searchItem(product)">Tìm kiếm</button>
+<p id="demo"></p>
+<script>
+    let product = ["samsung", "iphone", "n0kia"];
+    display(product);
+
+    function display(arr) {
+        let table = `<table>
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                                <th>edit</th>
+                                <th>delete</th>
+                            </tr>`;
+        for (let i = 0; i < arr.length; i++) {
+            table += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${arr[i]}</td>
+                            <td><button onclick="editItem(${i})">edit</button> </td>
+                            <td><button onclick="deleteItem(${i})">delete</td>
+                        </tr>`
+        }
+        table += `</table>`;
+        document.getElementById("demo").innerHTML = table;
+    }
+
+    function add(arr) {
+        let input = document.getElementById("name").value.trim();
+        if (input.trim() === "") {
+            alert("nhập giá trị");
+        } else {
+            arr.push(input);
+            display(arr);
+        }
+    }
+
+    function editItem(index) {
+        document.getElementById("name").value = product[index];
+    }
+
+    function editItem1(index) {
+        let itemEdit = document.getElementById("name").value;
+        product.splice(index, 1, itemEdit);
+        display(product);
+    }
+
+    function deleteItem(index) {
+        let conf = confirm(`Bạn có muốn xóa: ${product[index]}`);
+        if (conf) {
+            product.splice(index, 1);
+            display(product);
+        }
+    }
+
+    function searchItem(arr){
+        let itemSearch = document.getElementById("name").value;
+        let searchList = [];
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].includes(itemSearch)){
+                searchList.push(arr[i]);
+            }
+        }
+        display(searchList);
+    }
+</script>
+</body>
+</html>

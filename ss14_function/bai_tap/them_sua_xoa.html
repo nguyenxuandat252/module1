@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="name" id="input">
+<button onclick="add()" id="button">them</button>
+<button onclick="upDate()" id="button1">sua</button>
+<button onclick="search1()" id="button3">tim kiem</button>
+<p id="demo"></p>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>STT</th>-->
+<!--            <th>Name</th>-->
+<!--            <th>Edit</th>-->
+<!--            <th>Delete</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>A</td>-->
+<!--            <td><button>Edit</button></td>-->
+<!--            <td><button>Delete</button></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<script>
+    let products = ["samsung", "nokia", "iphone"];
+    buildTable(products);
+
+    function buildTable(list) {
+
+        let table = '<table>' +
+            '        <tr>' +
+            '            <th>STT</th>' +
+            '            <th>Name</th>' +
+            '            <th>Edit</th>' +
+            '            <th>Delete</th>' +
+            '        </tr>';
+        for (let i = 0; i < list.length; i++) {
+            table += `<tr>
+                                    <td>${i + 1}</td>
+                                    <td>${list[i]}</td>
+                                    <td><button onclick="repairItem(${i})">Edit</button></td>
+                                    <td><button onclick="deleteItem(${i})">Delete</button></td>
+                                </tr>`
+        }
+        table += `</table>`;
+        document.getElementById("demo").innerHTML = table;
+    }
+
+    function add() {
+        let produceName = document.getElementById("input").value;
+        products.push(produceName);
+        buildTable(products);
+    }
+
+    function deleteItem(index) {
+        const conf = confirm(`ban co muon xoa: ${products[index]}`);
+        if (conf) {
+            products.splice(index, 1);
+            buildTable(products);
+        }
+    }
+
+    function repairItem(index) {
+        document.getElementById("input").value = products[index];
+        const text = document.getElementById("input");
+        text.focus();
+        let button = document.getElementById("button");
+        button.disabled = true;
+    }
+
+    function upDate(index) {
+        let produceName = document.getElementById("input").value;
+        products.splice(index, 1, produceName);
+        document.getElementById("input").value = '';
+        buildTable(products);
+        let button = document.getElementById("button");
+        button.disabled =false ;
+    }
+
+    function search1() {
+        let searchList = []
+        let produceName1 = document.getElementById("input").value;
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].includes(produceName1)) {
+                searchList.push(products[i]);
+            }
+        }
+        buildTable(searchList)
+    }
+</script>
+</body>
+</html>
